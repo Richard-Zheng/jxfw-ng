@@ -37,6 +37,10 @@ config.plugins.push(...[
   shouldInlineRuntimeChunk &&
     new HTMLInlineCSSWebpackPlugin(),
   new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 1,
-    }),
+    maxChunks: 1,
+  }),
+  new webpack.SourceMapDevToolPlugin({
+    filename: '[file].map',
+    publicPath: 'https://richard-zheng.github.io/jxfw-ng/',
+  }),
 ].filter(Boolean))
