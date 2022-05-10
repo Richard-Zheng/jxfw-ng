@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "https://richard-zheng.github.io/jxfw-ng/static/css/main.a480f655.css",
-    "main.js": "https://richard-zheng.github.io/jxfw-ng/static/js/main.106b5d09.js",
+    "main.css": "https://richard-zheng.github.io/jxfw-ng/static/css/main.a6b5f62b.css",
+    "main.js": "https://richard-zheng.github.io/jxfw-ng/static/js/main.e8a769e1.js",
+    "static/js/main.e8a769e1.js.map": "https://richard-zheng.github.io/jxfw-ng/static/js/main.e8a769e1.js.map",
     "index.html": "https://richard-zheng.github.io/jxfw-ng/index.html",
     "static/media/logo.svg": "https://richard-zheng.github.io/jxfw-ng/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "static/js/main.106b5d09.js.LICENSE.txt": "https://richard-zheng.github.io/jxfw-ng/static/js/main.106b5d09.js.LICENSE.txt"
+    "static/css/main.a6b5f62b.css.map": "https://richard-zheng.github.io/jxfw-ng/static/css/main.a6b5f62b.css.map",
+    "static/js/main.e8a769e1.js.LICENSE.txt": "https://richard-zheng.github.io/jxfw-ng/static/js/main.e8a769e1.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/css/main.a480f655.css",
-    "static/js/main.106b5d09.js"
+    "static/css/main.a6b5f62b.css",
+    "static/js/main.e8a769e1.js"
   ]
 }
