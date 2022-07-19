@@ -7,6 +7,9 @@ import ProTip from './ProTip';
 import { AppBar, Grid, Paper, TextField, Toolbar } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import SaveIcon from '@mui/icons-material/Save';
+import * as api from './api/api';
+import { ICSCalendar } from './api/ics';
+import { CourseSchedule } from './api/course';
 
 function Copyright() {
   return (
@@ -20,11 +23,40 @@ function Copyright() {
   );
 }
 
+function download(filename: string, text: string, mimeType = 'text/plain') {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', `data:${mimeType};charset=utf-8,` + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }
+}
+
 export default function App() {
   const [loading, setLoading] = React.useState(false);
+  const [xnxqdm, setXnxqdm] = React.useState('202201');
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setLoading(true)
+    const jxfwSession = {};
+    const xnxqData = await api.xsAllKbList(jxfwSession, xnxqdm);
+    const firstDayInSemester = await api.getFirstDayInSemester(jxfwSession, '202201');
+    const cal = new ICSCalendar();
+    for (const course of xnxqData) {
+      const courseSchedule = new CourseSchedule(course);
+      const dates = courseSchedule.getCourseSchedulesInDate(firstDayInSemester);
+      for (const date of dates) {
+        cal.addEvent(courseSchedule.kcmc, date.start, date.end, undefined, undefined, courseSchedule.jxcdmcs, {freq: 'WEEKLY', count: date.count});
+      }
+    }
+    const calstr = cal.toString();
+    download('schedule.ics', calstr, 'text/calendar');
   }
 
   return (
@@ -53,6 +85,10 @@ export default function App() {
                 label="学年学期代码"
                 InputLabelProps={{
                   shrink: true,
+                }}
+                value={xnxqdm}
+                onChange={(e) => {
+                  setXnxqdm(e.target.value);
                 }}
               />
             </Grid>
