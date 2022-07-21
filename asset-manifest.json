@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "https://richard-zheng.github.io/jxfw-ng/static/js/main.0bd3fb14.js",
-    "static/js/main.0bd3fb14.js.map": "https://richard-zheng.github.io/jxfw-ng/static/js/main.0bd3fb14.js.map",
+    "main.js": "https://richard-zheng.github.io/jxfw-ng/static/js/main.bf1e2658.js",
+    "static/js/main.bf1e2658.js.map": "https://richard-zheng.github.io/jxfw-ng/static/js/main.bf1e2658.js.map",
     "index.html": "https://richard-zheng.github.io/jxfw-ng/index.html",
-    "static/js/main.0bd3fb14.js.LICENSE.txt": "https://richard-zheng.github.io/jxfw-ng/static/js/main.0bd3fb14.js.LICENSE.txt"
+    "static/js/main.bf1e2658.js.LICENSE.txt": "https://richard-zheng.github.io/jxfw-ng/static/js/main.bf1e2658.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/main.0bd3fb14.js"
+    "static/js/main.bf1e2658.js"
   ]
 }
