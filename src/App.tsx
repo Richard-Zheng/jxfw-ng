@@ -43,7 +43,7 @@ export default function App() {
   const [xnxqdm, setXnxqdm] = React.useState('202201');
 
   const handleClick = async () => {
-    setLoading(true)
+    setLoading(true);
     const jxfwSession = {};
     const xnxqData = await api.xsAllKbList(jxfwSession, xnxqdm);
     const firstDayInSemester = await api.getFirstDayInSemester(jxfwSession, '202201');
@@ -57,6 +57,7 @@ export default function App() {
     }
     const calstr = cal.toString();
     download('schedule.ics', calstr, 'text/calendar');
+    setLoading(false);
   }
 
   return (
