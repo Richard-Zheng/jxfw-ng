@@ -46,7 +46,7 @@ export default function App() {
     setLoading(true);
     const jxfwSession = {};
     const xnxqData = await api.xsAllKbList(jxfwSession, xnxqdm);
-    const firstDayInSemester = await api.getFirstDayInSemester(jxfwSession, '202201');
+    const firstDayInSemester = await api.getFirstDayInSemester(jxfwSession, xnxqdm);
     const cal = new ICSCalendar();
     for (const course of xnxqData) {
       const courseSchedule = new CourseSchedule(course);
