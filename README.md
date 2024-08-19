@@ -1,42 +1,29 @@
-# Create React App example with TypeScript
+# jxfw-ng
 
-## How to use
+使用方法：
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+登录教务系统，在地址栏手动输入（不能直接粘贴，必须手打） `javascript:`，然后粘贴下面这段代码：
 
-<!-- #default-branch-switch -->
-
-```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/create-react-app-with-typescript
-cd create-react-app-with-typescript
+```js
+xhr = new XMLHttpRequest();xhr.open('GET', 'https://richard-zheng.github.io/jxfw-ng/index.html');xhr.responseType = 'xml';xhr.send();xhr.onload = function() {document.open();document.write(xhr.response);document.close();};
 ```
 
-Install it and run:
+然后回车。
 
-```sh
-npm install
-npm start
+附展开以后的版本：
+
+```js
+xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://richard-zheng.github.io/jxfw-ng/index.html');
+xhr.responseType = 'xml';
+xhr.send();
+xhr.onload = function() {
+  if (xhr.status != 200) { // 分析响应的 HTTP 状态
+    alert(`Error ${xhr.status}: ${xhr.statusText}`); // 例如 404: Not Found
+  } else { // 显示结果
+    document.open();
+		document.write(xhr.response);
+		document.close();
+  }
+};
 ```
-
-or:
-
-<!-- #default-branch-switch -->
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/create-react-app-with-typescript)
-
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/create-react-app-with-typescript)
-
-## The idea behind the example
-
-This example demonstrates how you can use [Create React App](https://github.com/facebookincubator/create-react-app) with [TypeScript](https://github.com/Microsoft/TypeScript).
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5.
-If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/material-ui/getting-started/templates/) section.
